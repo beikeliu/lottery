@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 306px;
+  flex-wrap: wrap;
+}
+.item {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  background: pink;
+}
+.light {
+  background: yellow;
+}
+.play {
+  text-align: center;
+  line-height: 100px;
+  color: red;
+  cursor: pointer;
+}
