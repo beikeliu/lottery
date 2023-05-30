@@ -3,11 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-.wrap {
+#app {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.wrap {
   display: flex;
   width: 306px;
   flex-wrap: wrap;
@@ -26,4 +28,34 @@
   line-height: 100px;
   color: red;
   cursor: pointer;
+}
+
+.wrap-box {
+  width: 300px;
+  height: 30px;
+  border: 1px solid red;
+  overflow: hidden;
+}
+
+.marquee-container {
+  white-space: nowrap;
+  line-height: 30px;
+  /* 秒数计算：`${item.length * 5)s} */
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-item {
+  display: inline-block;
+  width: 200px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    /* 距离计算：`-${item.length * 100}%` */
+    transform: translateX(-500%);
+  }
 }

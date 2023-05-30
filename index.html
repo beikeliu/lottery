@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>九宫格转盘抽奖</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <script src="./play.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <div id="app">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>九宫格转盘抽奖</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <script src="./play.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <div id="app">
+    <div>
       设置中奖结果:
       <select v-model="target">
         <option v-for=" n in [1,2,3,4,6,7,8,9]" :value="n">{{n}}</option>
       </select>
-      <div class="wrap">
-        <div v-for="n in 9" :class="n===light ? ['item','light'] : 'item'">
-          <div v-if="n === 5" class="play" @click="start">Play Game</div>
-        </div>
+    </div>
+    <br>
+    <div class="wrap-box position">
+      <div class="marquee-container">
+        <div class="marquee-item">小明抽中了法拉利一辆</div>
+        <div class="marquee-item">小红抽中了保时捷一辆</div>
+        <div class="marquee-item">小花抽中了视频月卡一张</div>
+        <div class="marquee-item">小月抽中了积分*500</div>
+        <div class="marquee-item">小A抽中了扑克牌一副</div>
       </div>
     </div>
-    <script src="./main.js"></script>
-  </body>
+    <br>
+    <div class="wrap">
+      <div v-for="n in 9" :class="n===light ? ['item','light'] : 'item'">
+        <div v-if="n === 5" class="play" @click="start">Play Game</div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
 </html>
